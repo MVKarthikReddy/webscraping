@@ -116,27 +116,10 @@ if(1):
         d['description'].append(get_description(new_soup))
 
     
-    amazon_df = pd.DataFrame.from_dict(d)
-    amazon_df['title'].replace('', np.nan, inplace=True)
-    amazon_df = amazon_df.dropna(subset=['title'])
-    amazon_df.to_csv("amazon_data.csv", header=True, index=False)
+    a = pd.DataFrame.from_dict(d)
+    a['title'].replace('', np.nan, inplace=True)
+    a = a.dropna(subset=['title'])
+    a.to_csv("amazon_data.csv", header=True, index=False)
 
-print(amazon_df)
+print(a)
 
-
-# if(1):
-#     URL = 'https://www.amazon.com/s?k=phones&ref=nb_sb_noss_1'
-
-#     #defining headers
-#     HEADERS = ({'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36' , 'Accept-Language':'en-US , en;q=0.5'})
-
-#     #getting permission from website
-#     webpage = requests.get(URL , headers=HEADERS)
-
-#     link = BeautifulSoup(webpage.content , 'html.parser')
-
-#     links = link.find_all('a' , attrs={'class':'a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal'})
-
-#     # print(links)
-#     for link in links:
-#         print(link.get('href'))
