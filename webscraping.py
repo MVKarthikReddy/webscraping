@@ -82,7 +82,7 @@ if(1):
     HEADERS = ({'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36', 'Accept-Language': 'en-US, en;q=0.5'})
 
     # The webpage URL
-    URL = "https://www.amazon.com/s?k=playstation+4&ref=nb_sb_noss_2"
+    URL = input("enter the url : ")
 
     # HTTP Request
     webpage = requests.get(URL, headers=HEADERS)
